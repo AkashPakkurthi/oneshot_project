@@ -1,0 +1,58 @@
+body{   
+    background-color: honeydew;
+    margin:2%;
+    margin-bottom:0px;
+}
+h1{
+  color:#15484a;
+  text-align: center;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-weight: bold;
+}
+h4{
+  color:#858585;
+  float:left;
+  margin-right:10px;
+ 
+}
+  
+nav{
+  font-weight: bold;
+  font-family: cursive;
+}
+.active{
+  font-size: 130%;
+}
+
+.btn-dark{
+text-align: center;
+
+}
+.form{
+  float:right
+}
+
+.chart-buttons{
+  text-align: center;
+}
+.clear-row{
+  border:solid 2px honeydew ;
+}
+
+.nav-link{
+    margin-left:50px;  
+}
+input{
+  border-radius: 25px;
+}
+.huhu{
+  width:30px;
+  margin-left:20px;
+} 
+footer {
+  text-align:center; 
+  bottom: 0;
+  width: 50%;
+  margin-left:28%;
+  margin-top:40px;
+}

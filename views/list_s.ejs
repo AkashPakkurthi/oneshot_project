@@ -1,0 +1,22 @@
+<%-include("header")-%>
+
+<!-- get student details in a specific college -->
+<h1>Students in College <%=numb%></h1>
+<table style="margin-top:30px;font-family: serif;">
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Batch</th>
+      <th>Skill</th>
+    </tr>
+    <%items.map(x=>{%>
+        <tr>
+          <td><%=x.student_id%></td>
+            <td><%=x.name%></td>
+            <td><%=x.batch%></td>
+            <td><%=x.skill%></td>
+          </tr>
+    <%})%>    
+  </table>
+
+<%-include("footer")-%>

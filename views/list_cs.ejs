@@ -1,0 +1,23 @@
+<%-include("header")-%>
+
+<h1>Colleges in <%=branch%> </h1>
+  <table font-family: serif;>
+    <tr>
+      <th>Clg_ID</th>
+      <th>College Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Year Found</th>
+    </tr>
+    <%items.map(x=>{%>
+        <tr>
+            <td><%=x.clg_id%></td>
+            <td><a class="clglink" href=<%=linkurl%>+<%=x.name%>><%=x.name%></a></td>
+            <td><%=x.city%></td>
+            <td><%=x.state%></td>
+            <td><%=x.year_founded%></td>
+          </tr>
+    <%})%>
+  </table>
+
+  <%-include("footer")-%>

@@ -1,0 +1,48 @@
+<%-include("header")-%>
+
+<!-- get states page including a piechart -->
+   <div class="clg">
+   <h1>States vs Colleges</h1>
+   <br>
+   <br>
+    <div class="rows" >
+   <img style="width: 30%; float: right;" src="https://s3.envato.com/files/195496683/India-Map-States-Colored.jpg" alt="">
+   <p style="font-family: serif;">A.P : <a href="/states/A.P"> <%=ap%></a></p>  
+   <p style="font-family: serif;">Kerala:  <a href="/states/Kerala"> <%=ker%></a></p>
+   <p style="font-family: serif;">Karnataka: <a href="/states/Karnataka"> <%=kar%></a></p>
+   <p style="font-family: serif;">Punjab: <a href="/states/Punjab"> <%=pun%></a></p>
+   <p style="font-family: serif;">Tamil Nadu: <a href="/states/Tamil Nadu"> <%=tn%></a></p>
+   <p style="font-family: serif;">Telangana: <a href="/states/Telangana"> <%=tel%></a></p>   
+    </div>
+   </div>  
+   <div id="piechart"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+   <script type="text/javascript">
+   // Load google charts
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+   
+   // Draw the chart and set the chart values
+   function drawChart() {
+
+     var data = google.visualization.arrayToDataTable([
+     ['Task', 'Hours per Day'],
+     ['A.P',11],
+     ['Tamil Nadu', 18],
+     ['Kerala', 19],
+     ['Telangana', 18],
+     ['Karnataka', 17],
+     ['Punjab',17]
+   ]);
+   
+     // Optional; add a title and set the width and height of the chart
+     var options = { 'width':850, 'height':700};
+   
+     // Display the chart inside the <div> element with id="piechart"
+     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+     chart.draw(data, options);
+   }
+   </script>
+   
+<%-include("footer")-%>

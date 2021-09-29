@@ -1,0 +1,48 @@
+  <%-include("header")-%>
+
+  <!-- get courses page including a piechart -->
+  
+   <div class="clg" style="display: inline-block;" >
+   <h1 >Number of Colleges offering Various Branches</h1> 
+   <div class="rows" >
+    <img style="width: 30%; float: right;" src="https://previews.123rf.com/images/logomills/logomills1905/logomills190500779/125045100-engineering-gear-logo-design-symbol.jpg" alt="">
+   <p style="font-family: serif; margin-top:40px;">CSE : <a href="/courses/CSE"> <%=cse%></a></p>
+   <p style="font-family: serif;">Mechanical Engg: <a href="courses/Mechanical"> <%=mech%></a></p>
+   <p style="font-family: serif;">Civil Engg:  <a href="/courses/Civil"> <%=civil%></a></p>
+   <p style="font-family: serif;">Electrical Engg: <a href="/courses/Electrical"> <%=elec%></a></p>
+   <p style="font-family: serif;"> Aerospace Engg: <a href="/courses/Aerospace"> <%=aero%></a></p>
+   <p style="font-family: serif;">Chemical Engg: <a href="/courses/Chemical"> <%=chem%></a></p>
+  </div> 
+</div>    
+<div id="piechart"></div>
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+   <script type="text/javascript">
+   // Load google charts
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+   
+   // Draw the chart and set the chart values
+   function drawChart() {
+
+     var data = google.visualization.arrayToDataTable([
+     ['Task', 'Hours per Day'],
+     ['CSE',12 ],
+     ['Mechanical', 11],
+     ['Electrical', 25],
+     ['Aerospace', 15],
+     ['Chemical', 20],
+     ['Civil',17]
+   ]);
+
+   
+     // Optional; add a title and set the width and height of the chart
+     var options = { 'width':850, 'height':700};
+   
+     // Display the chart inside the <div> element with id="piechart"
+     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+     chart.draw(data, options);
+   }
+   </script>
+<%-include("footer")-%>

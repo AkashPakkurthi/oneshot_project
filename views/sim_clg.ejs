@@ -1,0 +1,21 @@
+<%-include("header")-%>
+
+<!-- get similar clgs page -->
+<h1>Colleges Similar to <%=clg_name%> offering <%=course%> Engg.</h1>
+<table style="margin-top:50px;">
+    <tr>
+    <th>Name</th>
+    <th>ID</th>
+    <th>City</th>
+    <th>Course</th>
+    </tr>   
+<%items.map(x=>{if(x.name!=clg_name){%>
+    <tr>
+      <td><%=x.name%></td>
+      <td><%=x.clg_id%></td>  
+      <td><%=x.city%></td>
+      <td><%=x.course%></td>
+    </tr>   
+    <%}})%>
+</table>
+<%-include("footer")-%>
